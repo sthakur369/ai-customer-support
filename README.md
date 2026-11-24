@@ -8,22 +8,19 @@ Requirements: Python 3.11+, Node.js 20+ and npm.
 
 ```bash
 python -m venv .venv
-# Windows: .venv\Scripts\activate
-# macOS/Linux: source .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env   # Windows: copy .env.example .env
 # Add your OpenAI API key to .env
-cd frontend && npm install && cd ..
 ```
 
 Start two terminals:
 
 ```bash
-uvicorn api:app --reload
+uvicorn api:app --host 127.0.0.1 --port 8000 --reload
 ```
 
 ```bash
-cd frontend && npm run dev
+cd frontend && npm install && npm run dev
 ```
 
 Open **http://127.0.0.1:5173**.
@@ -38,7 +35,7 @@ Open **http://127.0.0.1:5173**.
 
 The login screen includes one-click demo ID buttons. As a customer, open **Contact customer care** and select an order, or create a general support request if no recent orders are available. Then use chat or the microphone button. Sign in as Admin or Supervisor in another browser window to review the case and reply. The customer chat refreshes staff replies automatically.
 
-These ID-only logins are for demonstration only. Add password/OTP/SSO authentication before any public deployment.
+These ID-only logins are for demonstration only.
 
 ## How it works
 
@@ -68,7 +65,4 @@ Run either test script separately with `python tests/test_frontend.py` or `pytho
 
 ## Configuration and limitations
 
-- Set `OPENAI_API_KEY` in `.env`. Voice also requires Realtime model access and a microphone-enabled browser context (localhost or HTTPS).
-- Use `ML_MODEL=traditional_ml` unless you separately provide trained Hugging Face/MuRIL model weights; those fine-tuned weights are not included in this archive.
-- Login IDs and in-memory login throttling are demo conveniences, not production identity/rate-limit controls. Use strong authentication, a shared rate-limit store, HTTPS and managed secrets before deployment.
-- Automated local tests do not make live OpenAI calls or prove production load, concurrency or deployment readiness.
+- Use `ML_MODEL=traditional_ml` or `ML_MODEL=huggingface` u

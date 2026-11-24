@@ -1,0 +1,301 @@
+customer_query,language,intent,priority,escalation_risk
+"The appliance arrived with a cracked casing, and when I switched it on, it started smoking. I’ve turned it off and need someone to help me with this immediately.",english,damaged_item,urgent,1
+Ye headphones laptop ke saath compatible hain?,hinglish,product_information,low,0
+"Mera order abhi kis status mein hai? App par jo dikh raha hai woh samajh nahi aa raha, ab mujhe kya karna chahiye?",hinglish,order_status,medium,0
+"Pehle maine support ko message kiya, phir chat par baat ki, lekin dono baar meri baat dhang se samjhe bina conversation close kar di. Abhi tak koi clear response nahi mila. Is service ko thoda improve karna chahiye.",hinglish,complaint,medium,0
+"Hi, my order was meant to arrive yesterday, but it hasn't come yet. Could you please let me know when it might be delivered?",english,delivery_delay,medium,0
+The item arrived with a cracked part and I can't use it as it is. I'm not sure what to do next—could you please guide me through the next step?,english,damaged_item,high,0
+"I’m following up on my earlier message about the service experience. I was told I’d hear back, but I’ve been waiting and haven’t received an update yet. Please let me know when I can expect a response.",english,complaint,medium,0
+"My payment is showing as pending. What should I do next, and how long should I wait before trying again?",english,payment_issue,medium,0
+"I placed the order yesterday, then realised I had selected the wrong item. I submitted a cancellation request shortly after, but it still shows as active. Could you please explain how I can cancel it?",english,cancellation,medium,0
+"Hello, could you please cancel my order? If it has already been packed, is cancellation still possible or should I take any other step?",english,cancellation,medium,0
+"I asked earlier how to download the GST invoice, but haven't received the steps yet. Could you please tell me where I can find and download it?",english,other,low,0
+I was told to wait for details on how to change the delivery address or phone number for a future order. Could you let me know the steps when you get a chance?,english,other,low,0
+"The package arrived, but one item is missing. What should I do next?",english,missing_item,medium,0
+"कल मैंने ऑर्डर रद्द करने का अनुरोध किया था। उसके बाद स्थिति में बदलाव नहीं दिखा, इसलिए आज फिर से जाँच की। कृपया बताइए कि रद्द करने का अनुरोध स्वीकार हुआ है या नहीं।",hindi,cancellation,medium,0
+"Order ki delivery promised date se late ho gayi hai. Koi idea kab tak aa jayega, ya mujhe status check karne ke liye kya karna chahiye?",hinglish,delivery_delay,medium,0
+"Mera order abhi kahan tak pahuncha hai, please status bata dena.",hinglish,order_status,medium,0
+Is is phone case mein wireless charging compatible hai?,hinglish,product_information,low,0
+"Account mein login nahi ho raha, kya karun?",hinglish,account_issue,medium,0
+"Hi, damaged item ke baare mein follow up kar rahi hoon. Product ka ek hissa टूटा हुआ आया tha, please batayein ab kya karna hoga. Kaafi frustrating hai.",hinglish,damaged_item,medium,0
+"Hello, I’m following up on the payment that is still showing as pending. Could you please tell me if it has gone through? I’ve been waiting for an update.",english,payment_issue,medium,0
+"Delivery ki date nikal gayi hai, par parcel abhi tak nahi aaya. Tracking mein bhi clear update nahi dikh raha—ab mujhe kya karna chahiye?",hinglish,delivery_delay,medium,0
+मेरा ऑर्डर कहाँ तक पहुँचा है?,hindi,order_status,low,0
+"मैं यह सामान वापस करना चाहता हूँ, आगे क्या करना होगा?",hindi,return_request,medium,0
+"Account mein login nahi ho raha, next step kya hai?",hinglish,account_issue,medium,0
+Please refund the amount for my order.,english,refund_request,medium,0
+"Maine isi order ko cancel karne ke liye kai baar request ki hai, lekin cancellation abhi tak process nahi hui. Please isko jaldi cancel kar dijiye, meri request abhi pending hi dikh rahi he.",hinglish,cancellation,high,1
+"नमस्ते, मेरे रिफंड के बारे में जानकारी चाहिए। मुझे समझ नहीं आ रहा कि पैसे वापस आने में कितना समय लगेगा या मुझे कोई और कदम उठाना है। कृपया बता दीजिए।",hindi,refund_request,medium,0
+"नमस्ते, पैकेज खोलने पर उसमें खरीदा हुआ एक हिस्सा नहीं मिला। बाकी सामान ठीक से पैक था, इसलिए शायद वह छूट गया हो। कृपया जाँचकर बताइए कि इस मामले में क्या किया जा सकता है।",hinglish,missing_item,medium,0
+"Payment pending दिख रहा है, तो क्या मुझे थोड़ी देर इंतज़ार करना चाहिए या दोबारा payment करने से पहले कुछ check करना होगा? कृपया बताइए।",hinglish,payment_issue,medium,0
+"Mujhe office ke liye bulk order place karna hai. Corporate orders ka process kya hai, aur mujhe shuru karne ke liye kya details deni hongi? Thoda clear nahi hai.",hinglish,other,low,0
+"Item defective aaya tha; replacement ki koshish bhi fail ho gayi, aur maine pehle bhi report kiya hai. Abhi tak resolve nahi hua.",hinglish,damaged_item,high,1
+"I first checked the product page, then looked through the specifications, but I still can’t tell whether this model is compatible with a USB-C laptop. Could you confirm?",english,product_information,low,0
+"Missing item ke details main pehle bhi share kar chuka hoon, phir bhi same case baar-baar close ho raha hai bina solution ke. Please is baar issue resolve karwa dijiye.",hinglish,missing_item,high,1
+"The service I received during my enquiry felt quite dismissive, and I was not given a clear answer to a simple question. How can I share this feedback so it is reviewed?",english,complaint,medium,0
+"Humein office ke liye around 40 chairs order karni hain. Bulk ya corporate order ka process kya hai, aur quantity ke hisaab se quotation kaise mil sakta hai?",hinglish,other,low,0
+"I’m disappointed with the service I received. My question was answered very vaguely, and I had to spend time trying to understand what was meant. I’d appreciate clearer and more helpful responses from the support team.",english,complaint,medium,0
+"I'm having trouble logging into my account. I've tried entering my details a few times, but it keeps taking me back to the login screen. This is getting annoying—please let me know how I can access it.",english,account_issue,medium,0
+I've reported this service issue several times and it still hasn't been resolved. Please formally escalate my complaint.,english,complaint,medium,1
+"The package came without one item. I’ve shared the details a few times, but the same case keeps getting closed without anyone sorting it out. Can someone please actually look into the missing item?",english,missing_item,high,1
+"Support se baat karke thoda confused hoon, guidance clear nahi lagi. Ab mujhe kis tarah aage badhna chahiye?",hinglish,complaint,medium,0
+"Hello, could you please let me know the current status of my order? I placed it a few days ago and would appreciate an update on where it is in the process.",english,order_status,low,0
+The mug arrived with a crack near the handle and I can't use it properly. Could you help me with what to do next?,english,damaged_item,high,0
+"Hi, my payment is still showing as pending. Could you please check what’s happening with it?",english,payment_issue,medium,0
+Can you tell me how to cancel my order?,english,cancellation,medium,0
+"I’ve tried logging in to the same account a few times, and support has already suggested the usual steps, but I’m still locked out. I’m not sure what to try next. Could someone from the senior technical team please look into it?",english,account_issue,high,1
+"Hi, is this phone case compatible with the standard model as well as the Pro version? Also, could you tell me what material it is made from?",hinglish,product_information,low,0
+"I’m confused about how to proceed. I’ve tried arranging a return for this item several times, but the process keeps failing, even after contacting support more than once. Can someone help get the return set up?",english,return_request,high,1
+"The parcel arrived on Monday, and the charger listed in the box was missing. I sent the details when I first contacted support, then shared them again after the case was closed. It has now been closed a second time without any solution. Please have someone review the missing item case properly.",english,missing_item,high,1
+I’m quite frustrated with the fit of this item and would like to return it. Could you please tell me what the next step is?,english,return_request,medium,0
+"Mujhe ye item return karna hai, par app mein kaunsa option choose karun samajh nahi aa raha. Please bata sakte ho process kya hai?",hinglish,return_request,medium,0
+"First, I placed the order and the payment showed as successful. Then I noticed two charges for the same purchase. I contacted support more than once, but both charges are still showing. Please get the duplicate charge corrected; I need this resolved.",english,payment_issue,high,1
+"Hi, my payment is still showing as pending. I checked again today and it hasn't changed. Could you please let me know what I should expect?",english,payment_issue,medium,0
+"Hi, just following up to check when the refund is expected. Please let me know if you need anything else from me.",english,refund_request,medium,0
+"I entered my login details yesterday, but the page kept loading and did not open. I tried again this morning and still cannot access my account. Could you guide me on what to do?",english,account_issue,medium,0
+"Hi, I’m thinking of returning a shirt I bought. Could you let me know how the return process works?",english,return_request,medium,0
+"Pehle delivery kal ke liye dikh rahi thi, phir aaj ki date aa gayi. Ab promised date bhi nikal chuki hai. Next step kya hoga?",hinglish,delivery_delay,medium,0
+"The package arrived, but one of the items listed in it is missing. I'm not sure how to report this—could you please guide me?",english,missing_item,medium,0
+"Could you please give me a clear update on where my order is today? The promised status updates have not come through, and I have contacted support several times without getting an answer. I would appreciate someone senior checking this and confirming the current status.",english,order_status,high,1
+"I still can't access my account. I've tried the recovery steps several times and contacted support more than once, but the process keeps failing. Please have someone resolve this.",english,account_issue,high,1
+"The delivery date shown has already passed, but I am not sure what the updated status means. Should I just wait, or is there something I need to do?",english,delivery_delay,medium,0
+Iska storage size kitna hai? Agar listed nahi hai toh availability ka next step kya hoga?,hinglish,product_information,low,0
+"Pehle app se return request daali, par submit nahi hui. Phir support se baat karke dobara try kiya, tab bhi process fail ho gaya. Kai baar contact kar chuka hoon aur abhi tak isi item ka return arrange nahi hua. Please is baar kisi senior team member se isse resolve karwa dijiye.",hinglish,return_request,high,1
+"Yaar is order ko cancel karne ke liye pehle bhi bola tha, phir dobara request ki, but abhi tak cancel nahi hua. Please check karke cancel kar do.",hinglish,cancellation,high,1
+Could you tell me the current status of my order?,english,order_status,low,0
+"Hi, I received the package but one item listed in it is missing. Could you please check what I should do?",english,missing_item,medium,0
+"Hello, I would like to request a refund for an item I purchased. Could you please let me know how long the refund process usually takes and whether you need any details from me to get it started?",english,refund_request,medium,0
+"Pehle package deliver hua, phir maine khola aur andar sirf ek item tha. Dusra item missing hai, please check karke bata sakte ho?",hinglish,missing_item,medium,0
+"I found the support interaction a little unhelpful, as my question was not properly addressed. Could you please tell me the best way to submit feedback about this experience?",english,complaint,low,0
+"I’ve asked several times for this order to be cancelled, but it’s still active. Please get the cancellation processed; this needs someone to take ownership now.",english,cancellation,high,1
+I requested a refund and wanted to check how long it usually takes to reach my original payment method. Is there anything I need to submit?,english,refund_request,medium,0
+I checked the product details first and then compared the available options. Could you tell me whether this model comes in a smaller size?,english,product_information,low,0
+Payment pending dikh raha hai. Iska status kaise check karun?,hinglish,payment_issue,medium,0
+"Hello, I have requested cancellation of the same order a few times, but it has still not been cancelled. Could you please check why it is not being processed and help complete the cancellation?",english,cancellation,high,1
+"Delivery pehle kal tak expected thi. Kal status mein aaj dikhaya, aur aaj bhi parcel nahi aaya. Abhi delivery update check karne ke liye pooch raha hoon.",hinglish,delivery_delay,medium,0
+Tracking hasn't updated. I've contacted support several times and still don't know where my order is—please give me a clear status.,english,order_status,high,1
+"Refund ki dates baar-baar miss ho gayi hain, kai baar contact kiya. Ab formal consumer complaint file karungi.",hinglish,refund_request,high,1
+"Pehle order place hua, phir status mein dispatch dikhaya tha. Ab tracking update nahi aa raha hai, aap bata sakte hain abhi order kahan tak pahuncha?",hinglish,order_status,medium,0
+"Is laptop stand ka maximum supported laptop size kya hai? Listing mein size details clearly nahi dikh rahi, please confirm kar dijiye.",hinglish,product_information,low,0
+"I'm getting really frustrated because I can't log in to my account. It keeps saying my details don't match, but I believe they are correct. What should I try next?",english,account_issue,medium,0
+"Pehle maine payment ki, phir screen par pending dikhaya. Thodi der baad check kiya toh abhi bhi pending hai—iska kya matlab hai?",hinglish,payment_issue,medium,0
+"The package arrived, but one of the items listed in it is missing. I’m not sure what the next step is—could you please guide me?",english,missing_item,medium,0
+"कल मैं अपने खाते में लॉग इन कर पा रही थी, लेकिन बाद में ऐप बंद हो गया। आज फिर से खोलने पर लॉग इन नहीं हो रहा है। कृपया बताइए कि मुझे आगे क्या करना चाहिए।",hindi,account_issue,medium,0
+Mujhe order cancel karna hai. Cancel request abhi submit kar sakta hoon ya koi aur step lena padega?,hinglish,cancellation,medium,0
+"Namaste, main apne account mein login karne ki koshish kar raha hoon, par password sahi dalne ke baad bhi sign in nahi ho raha. Maine app band karke dobara khola aur internet bhi check kiya hai. Is problem ko solve karne ke liye mujhe ab kya karna chahiye? Kripya agla step bata dijiye.",hinglish,account_issue,medium,0
+"Mujhe refund ke baare mein thodi confusion hai. App mein refund ka option dikh raha hai, lekin samajh nahi aa raha ki request submit karne ke baad kya karna hota hai. Kripya bata sakte hain ki refund ka status ya process kahan check karun?",hinglish,refund_request,medium,0
+"सच कहूँ तो आपकी सहायता सेवा से बात करना थोड़ा मुश्किल लगता है। जवाब साफ़ नहीं मिलता, इसलिए कृपया बताइए कि बेहतर तरीके से मदद कैसे मिल सकती है।",hindi,complaint,medium,0
+"I’m following up about registering my product warranty. I contacted support a few times and was asked to wait, but I still don’t know how to complete the registration. Could someone please clarify the correct steps?",english,other,medium,1
+"I placed the order last week, and after it arrived I realised the item isn't suitable for me. I checked the return section today, but I'm not sure which option to select. Could you explain how I can send it back?",english,return_request,medium,0
+"पहले मैंने ऑर्डर दिया था, फिर कुछ देर बाद उसे रद्द करने का फैसला किया। कृपया मेरा ऑर्डर कैंसल कर दीजिए।",hindi,cancellation,medium,0
+"Yeh shirt size mein thodi chhoti hai, exchange ke liye kya karna hoga? App mein option kahan milega?",hinglish,return_request,medium,0
+"नमस्ते, मेरे पैकेट में एक सामान नहीं मिला। बाकी चीज़ें मिल गई हैं, लेकिन यह वाली चीज़ अंदर नहीं थी। कृपया बताइए कि अब मुझे क्या करना चाहिए और क्या इसकी जाँच हो सकती है?",hindi,missing_item,medium,0
+"I’m following up about the item I reported as damaged. The casing is cracked, so I can’t use it properly. Could you please let me know what the next step is?",english,damaged_item,medium,0
+"Hello, I have requested cancellation of this order more than once, but it is still showing as active. I also followed up to check whether the request went through, and it has not been processed yet. Could you please look into the cancellation and confirm its status?",english,cancellation,high,1
+"मैं अपने खाते में लॉग इन नहीं कर पा रहा हूँ। पासवर्ड रीसेट करने का विकल्प कहाँ मिलेगा, और क्या मैं उसी ईमेल से नया पासवर्ड बना सकता हूँ?",hindi,account_issue,medium,0
+"नमस्ते, ऐप में प्रोफ़ाइल वाला बटन दबाने पर स्क्रीन ठीक से खुलती नहीं है और कुछ हिस्सा कट जाता है। कृपया इसे देख लें। क्या आप बता सकते हैं कि मुझे ऐप अपडेट होने तक कोई दूसरा तरीका इस्तेमाल करना चाहिए?",hindi,other,low,0
+"Delivery date nikal gayi, parcel kab aayega?",hinglish,delivery_delay,medium,0
+"Mujhe ye item nahi chahiye ab, refund kaise request karna hai? App mein option kahan milega?",hinglish,refund_request,medium,0
+"I opened the package this morning and noticed that the charger was not inside. The outer package looked sealed when it arrived, so I checked all the packing material too. Could you please let me know what I should do next?",english,missing_item,medium,0
+I placed the order last week and then requested a refund yesterday. I have not received any update yet. Could you please tell me what I need to do next to get my money back?,english,refund_request,medium,0
+"Package mil gaya hai, thank you. Lekin andar ek item nahi tha—maine parcel aur packing dono check kar liye. Iske liye aap please kya kar sakte hain?",hinglish,missing_item,medium,0
+"My payment failed, but the checkout page is still showing it as pending. What should I do?",english,payment_issue,medium,0
+I asked earlier about the laptop stand's height adjustment. Could you please confirm the maximum height it can be set to?,english,product_information,low,0
+GST invoice download karne ka option kahan milega?,hinglish,other,low,0
+मेरे रिफंड की कई तय तारीखें निकल चुकी हैं और बार-बार संपर्क करने पर भी पैसा वापस नहीं आया। अब मैं औपचारिक उपभोक्ता शिकायत दर्ज करूँगा।,hindi,refund_request,high,1
+"Mujhe ye item return karna hai, process bata dijiye.",hinglish,return_request,medium,0
+"Hello, the delivery date shown was yesterday, but the parcel has not arrived yet. I understand there can sometimes be a delay, but could you please check the updated delivery estimate for me?",english,delivery_delay,medium,0
+"I cant log in to my account since this morning. It keeps saying my details are incorrect, but I have checked them twice. Can you help me get access again?",english,account_issue,medium,0
+"Hello, the item arrived with a cracked part and I’m not sure what I’m supposed to do now. Could you please guide me?",english,damaged_item,medium,0
+My delivery is later than promised. What should I do next?,english,delivery_delay,medium,0
+"I’m following up on my request to change the delivery address or phone number. I’ve contacted support a few times and have been waiting, but it’s still not sorted. Could someone take this up and let me know what’s possible?",english,other,medium,1
+Is phone case ke kaunse colours available hain?,hinglish,product_information,low,0
+I reported that the item arrived with a cracked panel and was told someone would get back to me. I’ve been waiting for an update—could you advise what happens next?,english,damaged_item,medium,0
+"Does this backpack have a separate padded compartment for a 15-inch laptop, or is it just one main section?",english,product_information,low,0
+I requested a return a few days ago and was waiting to hear what to do next. Could you let me know how I should send the item back?,english,return_request,medium,0
+"Yaar, item aaya toh hai but iska side wala part cracked hai aur use nahi ho raha. Iske liye kya karna hoga?",hinglish,damaged_item,medium,0
+"I made the payment yesterday, and the page showed it was pending. This morning the payment status still looks the same. Could you explain how long it usually takes to update?",english,payment_issue,medium,0
+"Package mein ek item kam hai, ab mujhe samajh nahi aa raha ki missing item ke liye request kaise karun. Kya karna hoga?",hinglish,missing_item,medium,0
+मिला हुआ सामान टूटा हुआ है और ठीक से काम नही कर रहा। इसे बदलवाने के लिए मुझे क्या करना होगा?,hindi,damaged_item,medium,0
+आपकी सहायता सेवा का जवाब संतोषजनक नहीं था।,hindi,complaint,medium,0
+"Mujhe ye item return karna hai, lekin app mein return ka option samajh nahi aa raha. Ab mujhe kya karna chahiye?",hinglish,return_request,medium,0
+"Pehle ek hi payment ki thi, par amount do baar debit ho gaya. Maine support ko teen baar contact kiya; har baar bola check karenge, par abhi tak resolve nahi hua. Isse ghar ka zaroori budget disturb ho raha hai. Please senior team se is payment issue ko review karwa dijiye.",hinglish,payment_issue,high,1
+"डिलीवरी बताई गई तारीख से देर हो रही है। थोड़ा परेशान हूँ, क्या आप बता सकते हैं कि अब इसके पहुँचने की अनुमानित तारीख क्या है?",hindi,delivery_delay,medium,0
+Could you please tell me how to change the delivery address or phone number for my order? I have been waiting for guidance and it is getting frustrating; I just need to know the right way to update those details.,english,other,medium,0
+"Mera payment pending dikh raha hai aur amount account se cut gaya. Is baare mein support ko kai baar contact kiya, par abhi tak solution nahi mila. Ye paise meri zaroori expenses ke liye chahiye, please ab isse resolve karein.",hinglish,payment_issue,urgent,1
+"Pehle maine order cancel karne ki request dali, phir dekha ki status abhi bhi active hai. Uske baad app mein dobara try kiya, par cancel nahi hua. Ab ise cancel kaise karun?",hinglish,cancellation,medium,0
+"Mera order abhi kahan tak pahuncha hai? Status mein clear nahi dikh raha, samajh nahi aa raha ki mujhe wait karna hai ya kuch aur karna hai. Please update bata sakte ho?",hinglish,order_status,medium,0
+"The package arrived, but the charger that should be inside is missing. Could you tell me how I should report the missing part, and do you need a photo of the package?",english,missing_item,medium,0
+"The package came today but the charging cable is missing from the box. What should I do next, can you please guide me?",english,missing_item,medium,0
+Do you offer bulk or corporate orders?,english,other,low,0
+"Payment thoda atak gaya lagta hai, app mein pending dikha raha hai. Kya isse complete hone me kuch time lagega?",hinglish,payment_issue,medium,0
+"Maine apni service wali query ke baare mein pehle message kiya tha aur abhi tak jawab nahi mila. Bas follow-up kar raha hoon, jab time mile toh please update de dena.",hinglish,complaint,medium,0
+"Mixer ka jar cracked aaya hai, use nahi ho raha.",hinglish,damaged_item,medium,0
+"Mujhe ye order cancel karna hai, app mein option samajh nahi aa raha. Ab cancel karne ke liye kya karun?",hinglish,cancellation,medium,0
+"मुझे अपने डिलीवरी पते या फ़ोन नंबर में बदलाव करना है। यह कहाँ से किया जा सकता है? कृपया सही तरीका बता दीजिए, मुझे विकल्प समझ नहीं आ रहा।",hindi,other,low,0
+I placed the order a few days ago and received the confirmation soon after. I’m checking in now to see its current status and where it is in the process. Could you please share an update?,english,order_status,medium,0
+ये कुर्ता मुझे वापस करना है। ऐप में रिटर्न का विकल्प कहाँ मिलेगा और इसे भेजने के लिए क्या करना होगा?,hindi,return_request,medium,0
+"Package mein ek item missing hai. Details kai baar de chuka hoon, par case har baar close ho raha hai bina solution ke. Please isko senior team tak pahunchao.",hinglish,missing_item,high,1
+My delivery is later than the promised date. Please share the updated delivery date.,english,delivery_delay,medium,0
+App mein login karte waqt error aa raha hai aur samajh nahi aa raha ab kya karun. Kya aap bata sakte hain account access karne ke liye next step kya hai?,hinglish,account_issue,medium,0
+I wanted to follow up on my feedback about the service experience. Could you please tell me the right way to share the details so they can be reviewed?,english,complaint,medium,0
+"मुझे यह सामान वापस करना है, लेकिन ऐप में कौन-सा विकल्प चुनना है समझ नहीं आ रहा। कृपया बताइए कि रिटर्न शुरू करने के लिए मुझे क्या करना होगा।",hindi,return_request,medium,0
+The item arrived damaged and started smoking when I switched it on. It is overheating—please get someone to assist me immediately.,english,damaged_item,urgent,1
+"Hello, one part is missing from the package. Could you please help?",english,missing_item,medium,0
+"I would like to give feedback about the support I received. The response was quite dismissive and did not really address my question, which made the experience disappointing. I hope the team can be more attentive when handling customer queries.",english,complaint,medium,0
+"Parcel kholne par product ka side tootaa hua mila. Samajh nahi aa raha ab kya karna chahiye, please guide karenge?",hinglish,damaged_item,medium,0
+"नमस्ते, एक ही खरीदारी के लिए मेरे खाते से दो बार पैसे कटे हैं। मैंने इस बारे में पहले भी कई बार संपर्क किया, लेकिन समस्या अब तक हल नहीं हुई। कृपया इसकी जाँच करके अतिरिक्त कटौती वापस करवाने में मदद करें।",hindi,payment_issue,high,1
+"Hello, just following up on the service issue I raised earlier. I’m still a bit confused about the update I received, could you please clarify it when you get a chance?",hinglish,complaint,medium,0
+I’m checking in as I’ve been waiting for an update. Could you please let me know where my order is at the moment and what the next step is?,english,order_status,medium,0
+"I received the item yesterday and checked it this morning, but it is not the right fit for me. I would like to return it; could you tell me what I need to do next?",english,return_request,medium,0
+This item is still defective after the replacement; I’ve reported it several times and the fixes haven’t worked. Please have someone senior resolve this.,english,damaged_item,high,1
+Could you tell me if this mixer has a pulse setting? I couldn't find it mentioned in the product details.,english,product_information,low,0
+Could you check the current status of my order and let me know its expected delivery date?,english,order_status,medium,0
+"I have tried arranging the return pickup a few times, but nobody has collected the item yet. This is getting quite frustrating. Please have a senior agent sort out the return, as the pickup attempts keep failing.",english,return_request,high,1
+I’m quite frustrated that I can’t see any clear update on my refund. This is my first time reporting it—what should I do next to get the money back?,english,refund_request,medium,0
+The item arrived with a cracked casing. What should I do next?,english,damaged_item,medium,0
+"Namaste, main is item ka return arrange karne ki koshish kar rahi hoon, lekin pickup ke kai attempts fail ho chuke hain. Kripya kisi senior agent se mera return resolve karwa dijiye; main aage bhi pickup ke liye available hoon.",hinglish,return_request,high,1
+"I tried cancelling my order, but the cancellation did not go through. This is quite frustrating—could you let me know what I should do next?",english,cancellation,medium,0
+Corporate orders ke liye bulk pricing milti hai?,hinglish,other,low,0
+"Hi, mujhe delivery ke liye apna address ya phone number change karna hai. Kya app mein dono details update ho sakti hain?",hinglish,other,low,0
+Payment is showing pending. Please check.,english,payment_issue,medium,0
+"क्या इस बोतल की क्षमता एक लीटर है, और क्या इसका ढक्कन गरम पानी के लिए ठीक रहेगा? विवरण में यह बात साफ़ नही लिखी है।",hindi,product_information,low,0
+"Hello, I’m having trouble signing in to my account. I’ve tried entering my details again, but I still can’t get past the login screen. Could you please guide me on the next steps to regain access?",english,account_issue,medium,0
+"Hi, is this phone stand adjustable enough to hold a tablet in portrait mode, or is it meant only for phones?",hinglish,product_information,low,0
+The app’s menu icon is cut off on my screen. How can I report this?,english,other,low,0
+मेरे रिफंड की प्रक्रिया शुरू करने के लिए मुझे क्या करना होगा? कृपया तरीका बता दीजिए।,hindi,refund_request,medium,0
+"The service at the help desk felt quite dismissive today. I was only trying to get a simple question answered, but the conversation was rushed and I left feeling rather unwelcome.",english,complaint,medium,0
+"I've tried arranging a return for this item several times, and the process keeps failing. I’ve also contacted support more than once, but I still can’t get the return through. Please help get this sorted; the steps are not working.",english,return_request,high,1
+I’ve received conflicting answers several times about whether this appliance is safe to use with a standard 16-amp socket. Could a qualified product specialist confirm the correct compatibility guidance?,english,product_information,high,1
+"I’m trying to log in but it keeps saying my details are incorrect, even though I’m sure they’re right. This is getting frustrating—what can I try?",english,account_issue,medium,0
+"इस पानी की बोतल में कितना पानी आता है, और क्या यह डिशवॉशर में साफ़ की जा सकती है?",hindi,product_information,low,0
+I’m following up on my login issue. Could you please let me know how I can reset my password and access my account?,english,account_issue,medium,0
+"GST invoice download karne ka option kaha milega? App mein dhundha but mil nahi raha, please bata dijiye.",hinglish,other,low,0
+"Pehle maine account recovery try ki, phir support se bhi contact kiya, lekin har baar process fail ho raha hai. Kai attempts ke baad bhi same account access nahi kar paa rahi hoon. Please isko senior team tak pahunchaiye, mujhe access wapas chahiye.",hinglish,account_issue,high,1
+"The promised delivery date has passed, and the parcel still hasn’t arrived. This is quite frustrating—could you tell me when I can expect it?",english,delivery_delay,medium,0
+"I'm confused about what to do now. The item arrived defective, and the replacement attempts haven't resolved it. I've reported the same fault more than once, but it's still unusable. Could someone please sort this out?",english,damaged_item,high,1
+I’d like to return this item. What should I do?,english,return_request,medium,0
+"Hi, does this backpack have a padded laptop compartment, and what screen size does it fit?",english,product_information,low,0
+"Same order cancel karne ko baar-baar bola hai, abhi tak cancel nahi hua. Please isko process karke confirm karo.",hinglish,cancellation,high,1
+मैंने कुछ दिन पहले ऑर्डर किया था और ऐप में अभी भी वही पुराना स्टेटस दिख रहा है। क्या आप बता सकते हैं कि मेरा ऑर्डर अभी कहाँ तक पहुँचा है?,hindi,order_status,medium,0
+"Order cancel karne ki request daali thi, par abhi tak status clear nahi hai. Thoda irritating hai—please bata sakte ho cancellation hua ya nahi?",hinglish,cancellation,medium,0
+Could you check the status of my order?,english,order_status,low,0
+"मैंने इस सामान के खराब होने की बात कई बार बताई है, लेकिन अभी तक कोई हल नहीं निकला। यह ठीक से काम ही नहीं करता, अब कृपया कोई ठोस समाधान बताइए।",hindi,damaged_item,high,1
+"मेरा सामान टूटा हुआ आया है और उसका एक हिस्सा ठीक से काम नहीं कर रहा। कृपया बताइए, इसे बदलवाने के लिए मुझे आगे क्या करना होगा?",hindi,damaged_item,high,0
+"नमस्ते, तय तारीख़ निकल गई है और मेरा पार्सल अभी तक नहीं पहुँचा। कृपया बता सकते हैं कि अब कब तक डिलीवरी होगी?",hindi,delivery_delay,medium,0
+"I’m a little confused—how can I check on my refund, and is there anything I need to do from my side?",english,refund_request,medium,0
+Delivery ki promised date nikal gayi hai aur parcel abhi tak nahi aaya. Kya aap bata sakte hain ab expected delivery kab hai?,hinglish,delivery_delay,medium,0
+Please cancel this order. The cancellation option is not working—what should I do next?,english,cancellation,medium,0
+"I've reported the minor app layout bug a few times, but the replies haven't helped me work out how to report it properly. Could someone who can investigate tell me the right way to submit the details?",english,other,medium,1
+Delivery address mein ek spelling correction karni hai. App mein phone number bhi update karne ka option kahan milega?,hinglish,other,low,0
+"Aapki service kaafi confusing lagi, mujhe samajh nahi aaya ki aage kya karna hai. Is situation mein next step kya hoga?",hinglish,complaint,medium,0
+"मैंने इस बारे में पहले पूछा था, इसलिए फिर से संपर्क कर रहा हूँ। सामान टूटा हुआ आया है। कृपया बताएं कि इसे बदलवाने के लिए मुझे क्या करना होगा।",hindi,damaged_item,medium,0
+"Is complaint par kai baar baat kar chuka hoon, par har baar resolution nahi mila. Please isse formally escalate kijiye.",hinglish,complaint,medium,1
+"पहले मैंने अपने ऑर्डर में डिलीवरी का पता बदलने की कोशिश की, लेकिन ऐप में यह विकल्प नहीं मिला। अब मैं सही पता दर्ज करना चाहता हूँ। क्या आप बता सकते हैं कि पता बदलने का अनुरोध कैसे करें?",hindi,other,medium,0
+सहायता चैट में जवाब देने का तरीका ठीक नहीं लगा। कृपया सेवा में सुधार करें।,hindi,complaint,medium,0
+"Item defective hai. Pehle bhi report kiya, par replacement ka solution nahi hua—please resolve this now.",hinglish,damaged_item,high,1
+"I contacted your service team for the first time today. The conversation felt rushed, and I did not feel my question was properly heard. I wanted to share this feedback about the service.",english,complaint,medium,0
+"Promo code/loyalty points apply nahi ho rahe; baar baar pooch chuka hoon, koi workable answer nahi mila. Please sort this out.",english,other,medium,1
+"I've contacted support a few times about the same payment being stuck, but it still hasn't been resolved. That amount is needed for my monthly expenses and I'm really struggling without it. Please get someone to look into this properly.",english,payment_issue,high,1
+"Pehle package mila, phir kholkar check kiya toh ek item missing tha. Iske baare mein pehle message kiya tha; please batayein ab kya karna hoga.",hinglish,missing_item,medium,0
+I’m looking at this laptop and can’t tell whether its listed USB-C port supports charging as well as data transfer. Could you clarify where I should check this in the product details?,english,product_information,low,0
+"Hello, my payment is still showing as pending after I made it yesterday. Could you please check what the status means?",english,payment_issue,medium,0
+"I’m a bit confused about what to do next. The return pickup has failed several times, and the item is still with me. Please have a senior agent resolve this return; I don’t know how else to get it picked up.",english,return_request,high,1
+"The item arrived with a cracked side, which is really disappointing. Could you let me know what I should do about the damaged product?",english,damaged_item,medium,0
+"I opened the package, but one of the items listed in it isn't there. I'm not sure if I should report it somewhere or share any details—what should I do?",english,missing_item,medium,0
+Please bata denge mera refund kab tak aa jayega?,hinglish,refund_request,medium,0
+I’m not happy with the service so far. What should I do next?,english,complaint,medium,0
+"नमस्ते, मैं यह सामान वापस करना चाहती हूँ। कृपया बताइए कि रिटर्न शुरू करने के लिए मुझे क्या करना होगा और इसे किस तरह पैक करना है?",hindi,return_request,medium,0
+"I still can't access my account. Recovery has failed several times, including after a few support contacts. Please have someone help restore access.",english,account_issue,high,1
+"Promo code apply karne ke baare mein poochha tha, abhi tak jawab nahi mila. Kya aap bata sakte hain ki checkout par code kaise lagana hai ya loyalty points kaise use hote hain?",english,other,low,0
+"I’m confused about what to do—the item arrived damaged, and when I tried it there was smoke and it started overheating. I need immediate help from someone about this.",english,damaged_item,urgent,1
+"Login nahi ho pa raha hai, password reset bhi try kiya tha. Thodi der se wait kar raha hoon ki shayad access ho jaye, par abhi bhi same error aa raha hai. Isko theek karne ka next step kya hoga?",hinglish,account_issue,medium,0
+I’m requesting a refund and wanted to check what information you need from me to start the process. Could you also let me know how I’ll be able to track the refund once it’s submitted?,english,refund_request,medium,0
+"Namaste, payment abhi bhi pending dikh raha hai, isliye main confirm karna chahta hoon ki ye complete hua ya nahi. Kripya check karke bata denge? Status thoda confusing hai.",hinglish,payment_issue,medium,0
+"The delivery date shown has already passed, but the package hasn't arrived yet. I haven't reported this before. Could you let me know what I should do next?",english,delivery_delay,medium,0
+"Does this desk lamp have adjustable brightness, and can it be used with a standard E27 bulb? I couldn't find that detail on the product page.",english,product_information,low,0
+"Ye item return karna hai, please process bata do.",hinglish,return_request,medium,0
+"Order ki promised dates kai baar miss ho chuki hain, contacts ke baad bhi. Mujhe ye urgently chahiye.",hinglish,delivery_delay,high,1
+"Mere refund ke baare mein kai baar follow-up kiya hai. Har baar alag promise mila, par amount abhi tak nahi aaya. Please isko senior team tak bhejiye, ab mujhe same baat baar baar samjhani pad rahi hai.",hinglish,refund_request,high,1
+"Pehle maine product page par size dekha, phir measurements check kiye. Kya is model ka medium size available hai?",hinglish,product_information,low,0
+Support ka response kaafi confusing tha.,hinglish,complaint,medium,0
+"ऐप में प्रोमो कोड कहाँ डालना होता है? और लॉयल्टी पॉइंट्स कैसे इस्तेमाल करूँ, थोड़ा बता देंगे?",hindi,other,low,0
+Could you check the status of my order?,english,order_status,medium,0
+मेरे भुगतान की स्थिति लंबित दिख रही है। क्या आप बता सकते हैं कि यह पूरा हुआ है या नहीं?,hindi,payment_issue,medium,0
+"I placed the order yesterday, then realised I no longer need it and tried to cancel it. The cancellation page is not clear to me—what should I do next?",english,cancellation,medium,0
+"कृपया मेरा ऑर्डर रद्द कर दीजिए। मैंने पहले भी कई बार रद्द करने का अनुरोध किया है, लेकिन हर बार वह पूरा नहीं हुआ। क्या आप इस मामले को किसी वरिष्ठ अधिकारी तक पहुँचा सकते हैं?",hindi,cancellation,high,1
+"Hi, I placed an order a few days back but cant see where it is now. Could you check the current status and tell me what I should do next?",english,order_status,medium,0
+"Account mein login nahi ho raha, kya karun?",hinglish,account_issue,medium,0
+"Hi, my payment is showing as pending. Could you tell me what that status means?",english,payment_issue,medium,0
+"Product page par dimensions diye hain, par clearly samajh nahi aa raha. Iska actual size kya hai? Har baar details dhoondhna itna confusing kyun hota hai?",hinglish,product_information,low,0
+"I’m still locked out of my account after several attempts to get support. Could senior technical staff help me reset access, and what steps should I follow?",english,account_issue,high,1
+"Mera order abhi tak kahan tak pahucha hai? Status mein clear update nahi dikh raha, please check karke batao.",hinglish,order_status,medium,0
+"Hello, I would like to request a refund for my purchase. Could you please explain how the refund is processed and how long it usually takes to reach the original payment method?",english,refund_request,medium,0
+"पहले मैंने कुर्ता मंगवाया और मिलने के बाद उसे पहनकर देखा, लेकिन साइज़ ठीक नहीं आया। अब मैं इसे वापस करना चाहती हूँ। कृपया रिटर्न शुरू करने का तरीका बता दीजिए।",hindi,return_request,medium,0
+The mug arrived with a cracked handle. Could you please help me with this?,english,damaged_item,medium,0
+"I made the payment yesterday evening, and it showed as pending. When I checked again this morning, it still had the same status. Could you tell me what that means?",english,payment_issue,medium,0
+I’m looking at this desk lamp but can’t tell whether its brightness can be adjusted. Could you explain how the dimming works?,english,product_information,low,0
+"Refund ka update abhi tak nahi mila hai, thoda wait kar liya. Kya aap bata sakte ho ki refund request ka current status kya hai?",hinglish,refund_request,medium,0
+"Yaar, apne account mein login nahi ho paa raha. Support se pehle bhi try kiya tha, but abhi tak lockout hai—koi senior technical person please dekh sakta hai?",hinglish,account_issue,high,1
+"Hello, the delivery was expected earlier, but it has not arrived yet. Could you please check the updated delivery date and let me know when I can expect it?",english,delivery_delay,medium,0
+"Hi, I’d like to return this item. What’s the next step to get that started?",english,return_request,medium,0
+"Payment pending dikh raha hai aur maine kuch din pehle iske baare mein poocha tha. Abhi tak update nahi mila, please status check kar denge?",hinglish,payment_issue,medium,0
+"Yaar is order ka tracking abhi bhi update nahi hua. Main support se pehle bhi kai baar pooch chuka hoon, par clear status nahi mila—please ab bata do order kahan hai.",hinglish,order_status,high,1
+Mera item damaged aaya hai aur use nahi ho raha. Iski photo bhejne ke liye app mein kahan jana hoga?,hinglish,damaged_item,medium,0
+"Missing item ke baare mein saari details pehle hi bhej chuka hoon, phir bhi same case bina solution ke close ho raha hai. Kaafi wait kar liya, please isko resolve kijiye.",hinglish,missing_item,high,1
+"My delivery was meant to arrive a few days ago, but it still hasn’t shown up. I’ve contacted support a few times and haven’t got a clear update yet. Can someone check where things stand?",english,delivery_delay,high,1
+"कृपया बताइए मेरा ऑर्डर अभी कहाँ तक पहुँचा है और उसके आने की क्या स्थिति है। इंतज़ार काफी हो गया है, थोड़ी जानकारी मिल जाए तो अच्छा होगा।",hindi,order_status,medium,0
+"पहले डिलीवरी की तारीख कल दिखाई दे रही थी, फिर आज की हो गई। अब आज भी पार्सल नहीं आया है। कृपया बता सकते हो कब तक मिलेगा?",hinglish,delivery_delay,medium,0
+"I’m a little confused by the help service here. The guidance on the site isn’t clear, so I’m not sure what I’m supposed to do next. Could someone explain the right way to get help?",english,complaint,low,0
+"नमस्ते, मैं अपने खाते में लॉग इन नहीं कर पा रहा हूँ। पासवर्ड सही डालने पर भी प्रवेश नहीं हो रहा। कृपया बताइए कि इसे ठीक करने के लिए मुझे क्या करना चाहिए।",hindi,account_issue,medium,0
+The item arrived with a cracked casing. Could you please advise what I should do next?,english,damaged_item,medium,0
+"I would like to request a refund for my purchase. This is my first time raising the issue, so could you please explain what information you need from me and what the next step is?",english,refund_request,medium,0
+"I ordered this last week and received it yesterday. After checking it at home, I realised it isn't suitable for me. Could you tell me how to arrange a return?",english,return_request,medium,0
+"नमस्ते, मेरे ऑर्डर की डिलीवरी पहले तय तारीख तक होनी थी, लेकिन वह तारीख निकल गई है और सामान अभी तक नहीं पहुँचा। कृपया बता सकते हैं कि अब डिलीवरी कब तक होने की संभावना है? मैं केवल स्थिति जानना चाहता हूँ।",hindi,delivery_delay,medium,0
+I wanted to check how long the refund usually takes after it has been approved. Is there anything I need to do from my side? I may have missed the usual timeline details.,english,refund_request,low,0
+मुझे अपना ऑर्डर रद्द करना है।,hindi,cancellation,medium,0
+"Order ka status bata dijiye please. Updates ke liye kai baar contact kiya, kuch clear nahi mila—mujhe aaj hi jawab chahiye.",hinglish,order_status,high,1
+"पैकेट में एक हिस्सा नहीं मिला था। इंतज़ार करने के बाद भी वह नहीं आया, कृपया बताइए अब उसे पाने के लिए क्या करना होगा।",hindi,missing_item,medium,0
+I’m a little confused about cancelling my order. I don’t see the option on the order page—what should I do?,english,cancellation,medium,0
+Could you check the status of my order?,english,order_status,medium,0
+"Refund ke liye main pehle bhi kai baar follow up kar chuka hoon. Har baar alag promise mila, par abhi tak paise wapas nahi aaye. Please kisi senior se is case ko dekhne ko kahiye.",hinglish,refund_request,high,1
+"App mein account login nahi ho raha, password daalne ke baad bhi wapas login screen aa jaati hai. Kya karu?",hinglish,account_issue,medium,0
+I asked earlier whether this model supports fast charging and have been waiting for a reply. Could you please let me know?,english,product_information,low,0
+मेरा ऑर्डर कहाँ तक पहुँचा है?,hindi,order_status,medium,0
+"The parcel arrived this morning. I opened it and found the charger, but the cable that was listed in the package is missing. Could you please check and let me know what can be done?",english,missing_item,medium,0
+"Mere purchase ka refund kai baar promised date ke baad bhi nahi aaya. Main support se repeatedly contact kar chuka hoon, har baar nayi date milti hai. Ab main formal consumer complaint file karunga, please refund ka clear update dijiye.",hinglish,refund_request,high,1
+"Payment status pending dikha raha hai, toh kya amount actually cut hua hai? Iska status check karne ka koi tareeka hai? thoda confus hoon.",hinglish,payment_issue,medium,0
+"This order has now missed several promised delivery dates, and I’ve contacted support more than once. I need it urgently, but I keep getting another date instead of an actual delivery. Please sort this out.",english,delivery_delay,high,1
+"I first entered my delivery details, then realised the phone number was outdated. Can I still change the delivery address or phone number on the request?",english,other,medium,0
+"Delivery ki date nikal gayi hai, parcel abhi tak nahi aaya. Aap check karke bata sakte ho kab tak milega?",hinglish,delivery_delay,medium,0
+"I placed the order last week, then requested a refund yesterday. I have not received any update yet; could you let me know what the next step is?",english,refund_request,medium,0
+मेरे ऑर्डर का रिफंड चाहिए। इसके लिए मुझे अब क्या करना होगा?,hindi,refund_request,medium,0
+"I'm trying to apply my promo code, and I also have loyalty points available, but I can't figure out where to enter or use them. What should I do next?",english,other,low,0
+"डिलीवरी की तारीख निकल गई है, पार्सल अभी तक नहीं आया।",hindi,delivery_delay,medium,0
+"My payment seems to be stuck as pending, but I'm not sure whether it went through. What should I do next?",english,payment_issue,medium,0
+Is this backpack available in a 20-litre size?,english,product_information,low,0
+Could you tell me where my order is?,english,order_status,medium,0
+"इस उपकरण के साथ कौन-सा आकार का कवर सही रहेगा? मुझे साइज़ की जानकारी नहीं मिल रही, कृपया बता दें।",hindi,product_information,low,0
+I'm confused about how to get back into my account. It isn't accepting my login details—what should I try next?,english,account_issue,medium,0
+"Mujhe yeh item return karna hai. Kya pickup ke liye original packaging zaroori hai, ya main ise kisi aur box mein pack kar sakta hoon?",hinglish,return_request,medium,0
+"नमस्ते, मैं अपने खाते में लॉग इन करने की कोशिश कर रही हूँ, लेकिन पासवर्ड डालने के बाद भी आगे नहीं बढ़ रहा। अब मुझे क्या करना चाहिए?",hindi,account_issue,medium,0
+"Pehle app mein order confirm dikhaya tha, phir status processing ho gaya. Ab kaafi der se wahi show ho raha hai—mera order abhi kis stage par hai?",hinglish,order_status,medium,0
+"पैकेज में एक सामान नहीं था। मैंने उसकी जानकारी कई बार भेजी, लेकिन हर बार केस बिना समाधान के बंद कर दिया जाता है। कृपया इसे इस बार ठीक से देखें।",hindi,missing_item,high,1
+Does this mixer have a pulse mode?,english,product_information,low,0
+"Order ke status ka update abhi tak nahi dikha. Thoda wait kar liya hai, abhi kahan tak pahucha hai bata sakte ho?",hinglish,order_status,medium,0
+Could you please help me sign in? I still can't access my account.,english,account_issue,medium,0
+"Support ka reply samajh nahi aaya, bas itna likha hai ki request check ho rahi hai. Ab mujhe kya karna chahiye, ya yahin se koi clearly bata sakta hai?",hinglish,complaint,medium,0
+"Maine pehle product page se GST invoice download karne ki koshish ki, par option nahi mila. Phir order details kholi aur wahan bhi samajh nahi aaya ki invoice kahan se milega. GST invoice download karne ka sahi tareeka bata doge?",hinglish,other,low,0
+"Yaar order cancel karna hai, app mein option dikh hi nahi raha. Please batao ab cancel kaise hoga?",hinglish,cancellation,medium,0
+"I was charged twice for the same purchase. I have contacted support a few times already, but the duplicate charge is still there and nobody has sorted it out. Could someone actually look into this?",english,payment_issue,high,1
+"Hi, order status ka koi update milega? Thoda wait kar liya hai, bas dekhna tha abhi kahan tak pahucha.",hinglish,order_status,medium,0
+"Package khola toh usme ek item nahi tha, bas baaki cheezein mili hain. Ab mujhe kya karna chahiye?",hinglish,missing_item,medium,0
+Please cancel my order when you get a chance. Thank you.,english,cancellation,medium,0
+"Iske size options ke baare mein kal bhi poocha tha, abhi tak reply nahi mila. Kya yeh 500 ml size mein available hai?",hinglish,product_information,low,0
+"Mujhe service ke baare mein thodi complaint hai—pickup ke liye jo time diya tha, us par koi aaya hi nahi. Ab mujhe next step kya lena chahiye?",hinglish,complaint,medium,0
+"Could you please let me know when my refund will be credited? I followed up earlier, but I still cannot see an update. It is getting frustrating to keep checking without knowing the status.",english,refund_request,medium,0
+"One item seems to be missing from my package, but I’m not sure what I’m supposed to do next. Could you please guide me?",english,missing_item,medium,0
+"Promo code apply karne ki koshish kar raha hoon, par app accept hi nahi kar raha. Loyalty points bhi use nahi ho rahe—please batao inhe apply kaise karna hai.",hinglish,other,low,0
+"The delivery was promised earlier, but it hasn’t arrived yet. Could you share its current status?",english,delivery_delay,medium,0
+I requested cancellation a little while ago and have been waiting for an update. Could you please let me know whether it has gone through?,english,cancellation,medium,0
+I sent a general question through the help section yesterday and have been waiting for a response. It is disappointing not to even receive an acknowledgement. I hope the support experience can be more attentive.,english,complaint,medium,0

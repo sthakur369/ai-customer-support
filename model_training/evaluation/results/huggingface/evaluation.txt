@@ -1,0 +1,67 @@
+HUGGING FACE MODEL EVALUATION
+============================================================
+Date: 2026-11-23 00:34
+Model: google/muril-base-cased (10 epochs)
+Test records: 600
+
+OVERALL PERFORMANCE
+------------------------------------------------------------
+Intent: Accuracy 89.17% | Macro-F1 89.10%
+  Language Macro-F1:
+    English: 88.10%
+    Hindi: 94.11%
+    Hinglish: 87.89%
+  Class-wise:
+    account_issue: P 98.0% | R 98.0% | F1 98.0% | Support 49
+    cancellation: P 76.6% | R 98.0% | F1 86.0% | Support 50
+    complaint: P 97.9% | R 92.2% | F1 94.9% | Support 51
+    damaged_item: P 90.7% | R 98.0% | F1 94.2% | Support 50
+    delivery_delay: P 98.0% | R 94.1% | F1 96.0% | Support 51
+    missing_item: P 89.8% | R 89.8% | F1 89.8% | Support 49
+    order_status: P 97.2% | R 68.6% | F1 80.5% | Support 51
+    other: P 93.9% | R 62.0% | F1 74.7% | Support 50
+    payment_issue: P 100.0% | R 80.0% | F1 88.9% | Support 50
+    product_information: P 65.8% | R 98.0% | F1 78.7% | Support 49
+    refund_request: P 86.0% | R 98.0% | F1 91.6% | Support 50
+    return_request: P 97.9% | R 94.0% | F1 95.9% | Support 50
+Priority: Accuracy 92.00% | Macro-F1 67.51%
+  Language Macro-F1:
+    English: 67.88%
+    Hindi: 64.56%
+    Hinglish: 91.34%
+  Class-wise:
+    high: P 85.8% | R 95.8% | F1 90.5% | Support 95
+    low: P 93.2% | R 78.1% | F1 85.0% | Support 105
+    medium: P 93.3% | R 95.7% | F1 94.5% | Support 396
+    urgent: P 0.0% | R 0.0% | F1 0.0% | Support 4
+Escalation Risk: Accuracy 99.50% | Macro-F1 99.10%
+  Language Macro-F1:
+    English: 98.84%
+    Hindi: 100.00%
+    Hinglish: 99.04%
+  Class-wise:
+    0: P 99.8% | R 99.6% | F1 99.7% | Support 501
+    1: P 98.0% | R 99.0% | F1 98.5% | Support 99
+
+INFERENCE LATENCY
+------------------------------------------------------------
+Model Loading Time: 14.20 seconds
+Total Inference Time: 196.47 seconds (327.45 ms/record)
+Device: CPU
+
+TOP MISTAKES
+------------------------------------------------------------
+Intent: 65 / 600 wrong
+  - other -> product_information: 19
+  - order_status -> cancellation: 14
+  - payment_issue -> refund_request: 8
+Priority: 48 / 600 wrong
+  - low -> medium: 23
+  - medium -> high: 11
+  - medium -> low: 6
+Escalation Risk: 3 / 600 wrong
+  - 0 -> 1: 2
+  - 1 -> 0: 1
+
+============================================================
+END OF REPORT

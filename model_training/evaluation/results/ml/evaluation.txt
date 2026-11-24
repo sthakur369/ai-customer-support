@@ -1,0 +1,79 @@
+ML MODEL EVALUATION
+==============================================================
+Date: 2026-11-22 21:07
+Test records: 600
+
+OVERALL PERFORMANCE
+--------------------------------------------------------------
+Intent: Accuracy 99.00% | Macro-F1 99.00%
+  Language Macro-F1:
+    English: 99.35%
+    Hindi: 96.72%
+    Hinglish: 99.53%
+  Class-wise:
+  order_status: P 98.1% | R 100.0% | F1 99.0% | Support 51
+  refund_request: P 100.0% | R 96.0% | F1 98.0% | Support 50
+  complaint: P 98.1% | R 100.0% | F1 99.0% | Support 51
+  other: P 94.3% | R 100.0% | F1 97.1% | Support 50
+  return_request: P 98.0% | R 98.0% | F1 98.0% | Support 50
+  damaged_item: P 100.0% | R 98.0% | F1 99.0% | Support 50
+  missing_item: P 100.0% | R 100.0% | F1 100.0% | Support 49
+  payment_issue: P 100.0% | R 100.0% | F1 100.0% | Support 50
+  cancellation: P 100.0% | R 100.0% | F1 100.0% | Support 50
+  delivery_delay: P 100.0% | R 100.0% | F1 100.0% | Support 51
+  product_information: P 100.0% | R 98.0% | F1 99.0% | Support 49
+  account_issue: P 100.0% | R 98.0% | F1 99.0% | Support 49
+Priority: Accuracy 88.83% | Macro-F1 80.17%
+  Language Macro-F1:
+    English: 86.77%
+    Hindi: 85.60%
+    Hinglish: 65.32%
+  Class-wise:
+  low: P 77.3% | R 87.6% | F1 82.1% | Support 105
+  medium: P 95.6% | R 88.1% | F1 91.7% | Support 396
+  high: P 80.9% | R 93.7% | F1 86.8% | Support 95
+  urgent: P 50.0% | R 75.0% | F1 60.0% | Support 4
+Escalation Risk: Accuracy 99.00% | Macro-F1 98.20%
+  Language Macro-F1:
+    English: 99.40%
+    Hindi: 94.68%
+    Hinglish: 98.16%
+  Class-wise:
+  0: P 99.6% | R 99.2% | F1 99.4% | Support 501
+  1: P 96.0% | R 98.0% | F1 97.0% | Support 99
+
+INFERENCE LATENCY
+--------------------------------------------------------------
+Total Model Loading Time (3 models): 0.460 seconds
+Total Inference Time (3 predictions per record): 0.116 seconds
+Average Latency Per Record (all 3 tasks): 0.193 ms
+Throughput: 5192.93 records/second
+Device: CPU
+Note: X.csv contains preprocessed TF-IDF features. This timing covers the three model predict() calls; TF-IDF transformation is not included.
+
+ERROR ANALYSIS
+--------------------------------------------------------------
+Intent:
+  Incorrect Predictions: 6 / 600
+  Top Confusions:
+    - account_issue -> other: 1
+    - damaged_item -> return_request: 1
+    - product_information -> other: 1
+Priority:
+  Incorrect Predictions: 67 / 600
+  Top Confusions:
+    - medium -> low: 26
+    - medium -> high: 20
+    - low -> medium: 13
+Escalation Risk:
+  Incorrect Predictions: 6 / 600
+  Top Confusions:
+    - 0 -> 1: 4
+    - 1 -> 0: 2
+  False Positives: 4
+  False Negatives: 2
+
+Note: Test data was used only for final evaluation, not training.
+
+==============================================================
+END OF REPORT

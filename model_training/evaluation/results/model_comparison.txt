@@ -1,0 +1,44 @@
+MODEL COMPARISON
+========================================================
+Generated: 2026-11-23 00:46:09
+
+TEST-SET PERFORMANCE
+--------------------------------------------------------
+Task                   Traditional ML   Fine-tuned MuRIL
+--------------------------------------------------------
+Intent                         99.00%             89.10%
+Priority                       80.17%             67.51%
+Escalation Risk                98.20%             99.10%
+--------------------------------------------------------
+Average Macro-F1               92.46%             85.24%
+
+BEST RESULT BY TASK
+--------------------------------------------------------
+Intent: Traditional ML
+Priority: Traditional ML
+Escalation Risk: Fine-tuned MuRIL
+
+Best average Macro-F1 on these test reports: Traditional ML
+
+URGENT PRIORITY CHECK
+--------------------------------------------------------
+Traditional ML urgent recall: 75.00%
+Fine-tuned MuRIL urgent recall: 0.00%
+
+LATENCY (NOT DIRECTLY COMPARABLE)
+--------------------------------------------------------
+Traditional ML: 0.193 ms/record (preprocessed features; TF-IDF transform excluded)
+Fine-tuned MuRIL: 327.45 ms/record (tokenization included; model loading excluded)
+
+
+CURRENT IMPLEMENTATION DECISION
+--------------------------------------------------------
+Current implementation candidate: Traditional ML
+Reason: highest average Macro-F1 (92.46%).
+Higher Macro-F1 on: Intent, Priority.
+Urgent priority recall: ML 75.00% vs MuRIL 0.00%.
+
+This recommendation is calculated dynamically from these reports.
+Because these reports use the held-out test set, this is a provisional
+code-integration candidate. Confirm the active model using validation
+results before deployment; reserve the test set for final evaluation.

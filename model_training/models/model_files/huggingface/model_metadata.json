@@ -1,0 +1,25 @@
+{
+  "model_name": "google/muril-base-cased",
+  "max_length": 160,
+  "epochs": 10,
+  "intent_labels": [
+    "order_status",
+    "refund_request",
+    "return_request",
+    "damaged_item",
+    "missing_item",
+    "payment_issue",
+    "cancellation",
+    "delivery_delay",
+    "product_information",
+    "account_issue",
+    "complaint",
+    "other"
+  ],
+  "priority_labels": [
+    "low",
+    "medium",
+    "high",
+    "urgent"
+  ]
+}

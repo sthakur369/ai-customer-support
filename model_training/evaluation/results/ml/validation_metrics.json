@@ -1,0 +1,20 @@
+{
+  "intent": {
+    "training_accuracy": 0.9976190476190476,
+    "training_macro_f1": 0.9976203654133001,
+    "validation_accuracy": 0.9866666666666667,
+    "validation_macro_f1": 0.9865866218282185
+  },
+  "priority": {
+    "training_accuracy": 0.920952380952381,
+    "training_macro_f1": 0.9253135566203023,
+    "validation_accuracy": 0.88,
+    "validation_macro_f1": 0.8165907710989678
+  },
+  "escalation_risk": {
+    "training_accuracy": 0.9971428571428571,
+    "training_macro_f1": 0.9952388437796628,
+    "validation_accuracy": 0.9966666666666667,
+    "validation_macro_f1": 0.9946912990391251
+  }
+}

@@ -1,3 +1,15 @@
+myenv
+.env
+ignore_folder
+learning.txt
+
+# Large Model Checkpoints
+model_training/models/model_files/huggingface/best_multitask_model.pt
+*.pt
+*.tmp*
+
+node_modules
+chroma_db
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -158,9 +170,6 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-
-# Conda environments
-conda-meta/
 
 # Spyder project settings
 .spyderproject

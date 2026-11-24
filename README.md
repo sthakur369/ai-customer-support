@@ -7,9 +7,10 @@ A demo support platform with ML classification, security screening, policy RAG, 
 Requirements: Python 3.11+, Node.js 20+ and npm.
 
 ```bash
-python -m venv .venv
+python -m venv myenv
+.\myenv\scripts\activate
 pip install -r requirements.txt
-cp .env.example .env   # Windows: copy .env.example .env
+cp .env.example .env
 # Add your OpenAI API key to .env
 ```
 

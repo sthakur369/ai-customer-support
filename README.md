@@ -1,6 +1,6 @@
 # Customer Support Platform
 
-A demo support platform with ML classification, security screening, policy RAG, customer-scoped tools, staff case management and OpenAI Realtime voice.
+A demo support platform with ML classification, security screening, policy RAG, customer-scoped tools, staff case management.
 
 ## Install and run
 

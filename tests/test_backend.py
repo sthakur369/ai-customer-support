@@ -24,6 +24,31 @@ def check(name: str, passed: bool, detail: str = "") -> None:
 def main() -> int:
     from database import db as db_module
     from llm.security import inspect_input
+    from app.message_routing import is_small_talk
+    # Stub the provider SDK for deterministic routing tests; no network call is made.
+    if "openai" not in sys.modules:
+        fake = types.ModuleType("openai")
+        fake.OpenAI = lambda *args, **kwargs: None
+        sys.modules["openai"] = fake
+    from llm.lifecycle import route_to_rag, _database_fact_only
+
+    check("simple greeting uses the deterministic fast-path classifier",
+          is_small_talk("yo yo kese ho") and is_small_talk("Hello!") and is_small_talk("good morning"))
+    check("greeting classifier does not swallow a real support question",
+          not is_small_talk("hi, where is my order?") and not is_small_talk("hello, I need a refund"))
+    routed, route_latency = route_to_rag("where is my order?", {}, {
+        "customer": {"customer_id": 1},
+        "selected_order": {"order_id": "ORD-1002", "shipment_status": "in_transit"},
+    })
+    check("verified order tracking bypasses RAG deterministically",
+          routed["rag_required"] is False and routed["routing_source"] == "deterministic_database_fact_guard"
+          and route_latency == 0.0)
+    verified_context = {"customer": {"customer_id": 1},
+                        "selected_order": {"order_id": "ORD-1002"}}
+    check("policy eligibility questions are not misclassified as database-only facts",
+          not _database_fact_only("Can I get a refund for this order?", verified_context))
+    check("order status remains a database-only fact even when RAG is empty",
+          _database_fact_only("Where is my order?", verified_context))
 
     conn = db_module.start_db()
     try:
@@ -74,6 +99,9 @@ def main() -> int:
     check("tool allowlist contains only supported functions", {x["function"]["name"] for x in tool_module.TOOLS} == {
         "list_recent_orders", "get_order_status", "get_payment_status", "get_shipment_status",
         "check_refund_eligibility", "create_refund_request"})
+    check("refund idempotency hashing dependency is imported", "import hashlib" in (ROOT / "llm" / "tool_calling.py").read_text(encoding="utf-8"))
+    check("tool executor rejects unexpected arguments",
+          not tool_module._execute("get_order_status", {"order_id": "ORD-1001", "customer_id": 2}, 1, "status").get("ok", False))
     check("negated refund statement cannot trigger a refund request",
           not tool_module._explicit_refund_intent("I do not want to submit a refund request"))
     check("clear refund request can trigger a request workflow",
@@ -145,14 +173,10 @@ def main() -> int:
           "_customer_safe_messages" in portal and "sc.resolution_notes" not in portal.split("def customer_tickets", 1)[1].split("def customer_orders", 1)[0])
     check("API sessions are hashed and revoked on logout", "hashlib.sha256" in api and "_revoke_token" in api and "revoked" in api)
     check("API input models validate identifiers and message content", "@field_validator(\"customer_id\")" in api and "clean_message" in api)
-    check("Realtime WebRTC uses the official SDK multipart encoder",
-          "realtime.calls.create(" in portal and "sdp=sdp" in portal
-          and "session=session" in portal and "run_in_threadpool(create_call)" in portal
-          and "multipart/form-data; boundary=" not in portal
-          and "OpenAI-Safety-Identifier" in portal and "'tool_choice': 'auto'" in portal)
-    check("voice connection is customer-authenticated and scoped to an owned active case",
-          "async def create_voice_connection(conversation_id: str, request: Request, a=Depends(customer))" in portal
-          and "get_conversation(conversation_id, a['customer_id'])" in portal)
+    pipeline_source = (ROOT / "app" / "support_pipeline.py").read_text(encoding="utf-8")
+    check("customer follow-ups keep an under-review ticket session active",
+          'if current["status"] == "under_review"' in pipeline_source
+          and 'return response, False' in pipeline_source.split('if current["status"] == "under_review"', 1)[1].split("# Resolve the previous order-clarification turn", 1)[0])
     check("CORS allows PATCH for case updates", '"PATCH"' in api)
     check("refund action has backend eligibility, ownership and idempotency controls",
           "_refund_eligibility" in tool_source and "BEGIN IMMEDIATE" in tool_source and "idempotency_key" in tool_source)

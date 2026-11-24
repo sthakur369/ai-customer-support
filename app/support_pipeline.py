@@ -21,6 +21,7 @@ from app.ticket_service import (
     close_conversation, escalate_conversation, close_inactive_conversations,
 )
 from app.order_context import resolve_order_context
+from app.message_routing import is_small_talk, small_talk_response
 
 
 def show(stage: str, payload: dict) -> None:
@@ -62,13 +63,19 @@ def answer_question(question: str, customer_id: int, order_id: str | None,
     if len(question) > MAX_QUERY_LENGTH:
         return {"status": "REFUSED", "message": f"Question exceeds {MAX_QUERY_LENGTH} characters.", "latency_seconds": 0.0}
 
+    if is_small_talk(question):
+        response = small_talk_response(question)
+        print("\n[FAST PATH] Greeting/pleasantry detected; ML, security LLM, RAG and escalation stages skipped.")
+        show("DIRECT RESPONSE", response)
+        return response
+
     print("\nProcessing question...")
     print("1/5 ML classification", end="... ", flush=True)
     ml, ml_latency = predict_query(question)
     ml["latency_seconds"] = ml_latency
     show("ML CLASSIFICATION", ml)
 
-        # Fetch authenticated customer/order context before intervention assessment.
+    # Fetch authenticated customer/order context before intervention assessment.
     # The intervention LLM also needs this context to avoid asking for
     # information already provided during order selection.
     customer_context = get_customer_context(
@@ -85,8 +92,6 @@ def answer_question(question: str, customer_id: int, order_id: str | None,
         return response
 
     show("VERIFIED CUSTOMER CONTEXT", customer_context)
-
-    
 
     print("2/5 Security and intervention assessment", end="... ", flush=True)
     intervention, security, security_latency = security_assessment( question, ml, customer_context )
@@ -108,7 +113,7 @@ def answer_question(question: str, customer_id: int, order_id: str | None,
         # flow is being handed off. Failure to retrieve must not block escalation.
         routing, retrieval = None, None
         try:
-            routing, _ = route_to_rag(question, ml)
+            routing, _ = route_to_rag(question, ml, customer_context)
             if routing.get("rag_required"):
                 rag_result, rag_latency = retrieve_and_rerank(
                     question, routing.get("relevant_document_ids"), routing.get("search_query")
@@ -133,8 +138,18 @@ def answer_question(question: str, customer_id: int, order_id: str | None,
         show("FINAL RESPONSE", response)
         return response
 
+    # Resolve order selection before routing so factual order questions do not
+    # depend on policy retrieval and the LLM never guesses among multiple orders.
+    customer_context, clarification = resolve_order_context(question, ml, customer_context)
+    if clarification is not None:
+        clarification["latency_seconds"] = round(time.perf_counter() - total_started, 4)
+        clarification["stage_latencies_seconds"] = {"ml": ml_latency}
+        clarification["total_latency_seconds"] = clarification["latency_seconds"]
+        show("ORDER CLARIFICATION REQUIRED", clarification)
+        return clarification
+
     print("3/5 Checking whether company knowledge is required", end="... ", flush=True)
-    routing, routing_latency = route_to_rag(question, ml)
+    routing, routing_latency = route_to_rag(question, ml, customer_context)
     show("KNOWLEDGE ROUTING", routing)
     retrieval = {"status": "NOT_REQUIRED", "chunks": [], "evidence": [], "latency_seconds": 0.0}
     if routing["rag_required"]:
@@ -194,22 +209,6 @@ def answer_question(question: str, customer_id: int, order_id: str | None,
         return response
     show("VERIFIED CUSTOMER CONTEXT", customer_context)
 
-    # Resolve order references deterministically before asking the final LLM.
-    # The model must never guess which of several customer orders is intended.
-    customer_context, clarification = resolve_order_context(question, ml, customer_context)
-    if clarification is not None:
-        clarification["latency_seconds"] = round(time.perf_counter() - total_started, 4)
-        clarification["stage_latencies_seconds"] = {
-            "ml": ml_latency,
-            "security_and_intervention": security_latency,
-            "knowledge_routing": routing_latency,
-            "rag_retrieval_and_reranking": retrieval.get("latency_seconds", 0.0),
-            "final_response": 0.0,
-        }
-        clarification["total_latency_seconds"] = clarification["latency_seconds"]
-        show("ORDER CLARIFICATION REQUIRED", clarification)
-        return clarification
-
     final, final_latency = compose_final_response(
         question, ml, intervention, routing, retrieval, customer_context
     )
@@ -218,7 +217,8 @@ def answer_question(question: str, customer_id: int, order_id: str | None,
         "security_and_intervention": security_latency,
         "knowledge_routing": routing_latency,
         "rag_retrieval_and_reranking": retrieval.get("latency_seconds", 0.0),
-        "final_response": final_latency,
+        "tool_calling": final.get("tool_call_latency_seconds", 0.0),
+        "final_response": max(0.0, final_latency - final.get("tool_call_latency_seconds", 0.0)),
     }
     final["total_latency_seconds"] = round(time.perf_counter()-total_started, 4)
     # Persist a compact, staff-only diagnostic snapshot alongside the assistant turn.
@@ -345,7 +345,7 @@ def _handle_customer_turn(question: str, session: dict, conversation: dict,
     conversation_id = conversation["conversation_id"]
     state = conversation.get("state") or {}
     current = get_conversation(conversation_id, session["customer_id"])
-    if not current or current["status"] not in {"open", "awaiting_customer"}:
+    if not current or current["status"] in {"closed", "resolved"}:
         print("[INFO] This support conversation is no longer active.")
         return None, True
 
@@ -353,6 +353,22 @@ def _handle_customer_turn(question: str, session: dict, conversation: dict,
     if not saved_user_message.get("ok"):
         print("[INFO] This conversation has expired or is no longer active. Please start a new support chat.")
         return None, True
+
+    # A human-review ticket remains active. Preserve the session and append
+    # customer follow-up messages without re-running the automated pipeline.
+    if current["status"] == "under_review":
+        response = {
+            "status": "ESCALATED", "decision": "ESCALATE",
+            "message": (
+                f"Your ticket {current.get('ticket_number')} is still under review. "
+                "I've added your message to the conversation for the support team."
+            ),
+            "ticket_number": current.get("ticket_number"),
+            "human_intervention_required": True, "citations": [],
+        }
+        _persist_response(conversation_id, response)
+        print(response["message"])
+        return response, False
 
     # Resolve the previous order-clarification turn deterministically.
     if state.get("kind") == "pending_order_clarification":

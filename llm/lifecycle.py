@@ -11,6 +11,7 @@ from llm.evidence import (
     _database_evidence, _payment_consistency_warnings, canonicalize_citations,
     build_rag_evidence, build_readable_evidence,
 )
+import re
 
 
 def ml_intervention_signal(ml_result: dict) -> dict:
@@ -173,23 +174,78 @@ def security_assessment(
     )
 
 
-def route_to_rag(question: str, ml_result: dict) -> tuple[dict, float]:
+_DATABASE_FACT_PATTERNS = (
+    r"\bwhere(?:'s| is) my order\b", r"\b(track|tracking) (?:my |the )?order\b",
+    r"\b(order|shipment|delivery) status\b", r"\bstatus of (?:my |the )?order\b",
+    r"\b(payment|refund) status\b", r"\bhas (?:my |the )?order shipped\b",
+    r"\bhas (?:my |the )?order been delivered\b", r"\bwhen will (?:my |the )?order arrive\b",
+    r"\bwhen is (?:my |the )?order arriving\b", r"\bwhere is (?:my |the )?(?:package|parcel)\b",
+    r"\b(ORD-[A-Z0-9-]+)\b.*\b(status|track|tracking|shipment|delivery)\b",
+)
+_POLICY_PATTERNS = (
+    r"\b(return|refund|cancellation|warranty) policy\b",
+    r"\b(can i|am i able to|eligible for|eligibility for).{0,45}\b(refund|return|cancel)\b",
+    r"\b(how long|what is the timeframe).{0,45}\b(refund|return|replacement|warranty)\b",
+    r"\b(terms and conditions|company policy|delivery policy|shipping policy)\b",
+    r"\bwhat are the rules for\b",
+)
+
+
+def _database_fact_only(question: str, customer_context: dict | None) -> bool:
+    """Identify factual account lookups that must use verified DB data, not RAG."""
+    import re
+    text = unicodedata.normalize("NFKC", str(question or "")).casefold()
+    if not isinstance(customer_context, dict) or not customer_context.get("customer"):
+        return False
+    if any(re.search(pattern, text) for pattern in _POLICY_PATTERNS):
+        return False
+    return any(re.search(pattern, text) for pattern in _DATABASE_FACT_PATTERNS)
+
+
+def route_to_rag(question: str, ml_result: dict,
+                 customer_context: dict | None = None) -> tuple[dict, float]:
+    # Deterministic routing guard: verified order/payment/shipment facts come
+    # from the customer's database context. They do not require company policy.
+    if _database_fact_only(question, customer_context):
+        catalog = load_document_catalog()
+        result = {
+            "rag_required": False,
+            "relevant_document_ids": [],
+            "search_query": "",
+            "reason": "This is a factual customer/order lookup answerable from verified database records; policy retrieval is not required.",
+            "document_catalog_count": len(catalog),
+            "latency_seconds": 0.0,
+            "routing_source": "deterministic_database_fact_guard",
+        }
+        print("[INFO] RAG skipped: factual customer/order question will use verified database context.")
+        return result, 0.0
+
     catalog = load_document_catalog()
     result, latency = ask_json("rag_router", {
         "customer_question": unicodedata.normalize("NFC", question),
         "ml_classification": ml_result.get("predictions", {}),
+        "has_verified_customer_context": bool(
+            isinstance(customer_context, dict) and customer_context.get("customer")
+        ),
         "available_documents": catalog,
     })
     ids = {item["document_id"] for item in catalog}
     selected = result.get("relevant_document_ids", [])
     selected = [item for item in selected if item in ids] if isinstance(selected, list) else []
+    rag_required = bool(result.get("rag_required", True))
+    policy_intent = any(re.search(pattern, unicodedata.normalize("NFKC", question).casefold())
+                        for pattern in _POLICY_PATTERNS)
+    if policy_intent and not rag_required:
+        rag_required = True
+        result["reason"] = "The customer explicitly asks about company policy or eligibility; policy evidence is required."
     return {
-        "rag_required": bool(result.get("rag_required", True)),
+        "rag_required": rag_required,
         "relevant_document_ids": selected,
         "search_query": str(result.get("search_query") or question).strip()[:1000],
         "reason": result.get("reason", "No reason supplied."),
         "document_catalog_count": len(catalog),
         "latency_seconds": latency,
+        "routing_source": "llm",
     }, latency
 
 
@@ -260,7 +316,8 @@ def compose_final_response(question: str, ml: dict, intervention: dict, routing:
     question_lower = question.casefold()
     tool_triggers = (
         "order", "payment", "refund", "shipment", "delivery", "tracking",
-        "track", "parcel", "package", "ORD-",
+        "track", "parcel", "package", "arrive", "arrival", "where is",
+        "when will", "list my", "show my", "ORD-",
     )
     if customer_id and any(term in question_lower for term in tool_triggers):
         try:

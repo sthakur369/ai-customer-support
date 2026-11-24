@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import hashlib
+import hashlib
 import json
 import re
 import sqlite3
@@ -158,13 +159,29 @@ def _explicit_refund_intent(question: str) -> bool:
 
 def _execute(name: str, arguments: dict, customer_id: int, question: str) -> dict:
     # Authenticated identity is injected by the server, never accepted from model arguments.
+    allowed_names = {item["function"]["name"] for item in TOOLS}
+    if name not in allowed_names:
+        return {"ok": False, "error": "Tool is not permitted."}
+    if not isinstance(arguments, dict):
+        return {"ok": False, "error": "Tool arguments must be an object."}
     if name == "list_recent_orders":
+        if arguments:
+            return {"ok": False, "error": "This tool does not accept arguments."}
         orders = get_recent_customer_orders(customer_id, 5)
         return {"ok": True, "orders": [
             {"order_id": o.get("order_id"), "order_status": o.get("order_status"),
              "total_amount": o.get("total_amount"), "currency": o.get("currency")}
             for o in orders
         ]}
+    allowed_arguments = {
+        "get_order_status": {"order_id"},
+        "get_payment_status": {"order_id"},
+        "get_shipment_status": {"order_id"},
+        "check_refund_eligibility": {"order_id"},
+        "create_refund_request": {"order_id", "reason"},
+    }
+    if set(arguments) - allowed_arguments.get(name, set()):
+        return {"ok": False, "error": "Unexpected tool arguments were rejected."}
     order_id, order = _get_owned_order(customer_id, arguments)
     if order is None:
         return {"ok": False, "error": "That order was not found for this customer or the order ID is invalid."}
@@ -209,8 +226,14 @@ def run_support_tool_calls(question: str, customer_id: int, customer_context: di
     ]
     user_payload = {
         "customer_question": question,
-        "verified_selected_order_id": selected.get("order_id"),
+        "verified_selected_order": {
+            "order_id": selected.get("order_id"),
+            "order_status": selected.get("order_status"),
+            "shipment_status": selected.get("shipment_status"),
+            "payment_status": (selected.get("payment") or {}).get("payment_status"),
+        } if selected else None,
         "verified_customer_order_ids": order_summaries,
+        "available_tool_names": [item["function"]["name"] for item in TOOLS],
     }
     messages = [{"role": "system", "content": prompt},
                 {"role": "user", "content": json.dumps(user_payload, ensure_ascii=False)}]
@@ -218,7 +241,13 @@ def run_support_tool_calls(question: str, customer_id: int, customer_context: di
     results = []
     total_calls = 0
     for _ in range(3):
-        request = {"model": LLM_MODEL, "messages": messages, "tools": TOOLS, "tool_choice": "auto"}
+        request = {
+            "model": LLM_MODEL,
+            "messages": messages,
+            "tools": TOOLS,
+            "tool_choice": "auto",
+            "parallel_tool_calls": False,
+        }
         if LLM_MODEL.lower().startswith("gpt-6"):
             request["reasoning_effort"] = "none"
         response = client.chat.completions.create(**request)

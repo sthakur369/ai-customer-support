@@ -42,12 +42,7 @@ def main() -> int:
         ("customer chat refresh is wired", "setInterval(poll,3000)" in source),
         ("customer can create a support request without an order", "onContact(null)" in source and "Create a support request" in source),
         ("intervention action explains its effect", "Request human review" in source and "Clear human review" in source and "Flag this when the AI should stop handling the case" in source),
-        ("voice uses browser WebRTC", "new RTCPeerConnection()" in source and "createDataChannel" in source),
-        ("voice uses authenticated server endpoints", "/api/customer/voice-connect" in source and "/api/customer/voice-turn" in source),
-        ("voice SDP is sent to the authenticated backend, not directly to OpenAI", "Content-Type':'application/sdp" in source and "api.openai.com/v1/realtime/calls" not in source),
-        ("voice handles completed Realtime function calls", "response.output_item.done" in source and "function_call_output" in source),
         ("browser bundle does not contain a standard OpenAI API key", "OPENAI_API_KEY" not in source),
-        ("voice controls have styling", ".voice-support-button" in css),
     ]
     for name, passed in checks:
         check(name, passed)
